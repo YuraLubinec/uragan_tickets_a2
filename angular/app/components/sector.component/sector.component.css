@@ -1,0 +1,9 @@
+.selected {
+	background-color: red;
+}
+
+td button {
+	width: 100%;
+	padding : 1px;
+	font-size: 9px;
+}

@@ -1,0 +1,22 @@
+<div class="row">
+  <select [(ngModel)]="selectedGame">
+    <option disabled>Оберіть гру</option>
+    <option *ngFor="let game of games" [ngValue]="game">Гра {{game.date}}: {{game.firstTeam}} vs {{game.secondTeam}}</option>
+  </select>
+</div>
+<div class="row">
+  <sector *ngFor="let sector of sectors | sectorPipe: 1" [sector]="sector" [selectedGame]="selectedGame" class="col-md-2 col-lg-2"></sector>
+  <sector *ngFor="let sector of sectors | sectorPipe: 2" [sector]="sector" [selectedGame]="selectedGame" class="col-md-2 col-lg-2"></sector>
+  <sector *ngFor="let sector of sectors | sectorPipe: 3" [sector]="sector" [selectedGame]="selectedGame" class="col-md-2 col-lg-2"></sector>
+  <sector *ngFor="let sector of sectors | sectorPipe: 4" [sector]="sector" [selectedGame]="selectedGame" class="col-md-2 col-lg-2"></sector>
+  <sector *ngFor="let sector of sectors | sectorPipe: 5" [sector]="sector" [selectedGame]="selectedGame" class="col-md-2 col-lg-2"></sector>
+</div>
+<div class="row">
+  <sector *ngFor="let sector of sectors | sectorPipe: 6" [sector]="sector" [selectedGame]="selectedGame" class="col-md-3 col-lg-3"></sector>
+  <sector *ngFor="let sector of sectors | sectorPipe: 7" [sector]="sector" [selectedGame]="selectedGame" class="col-md-6 col-lg-6"></sector>
+  <sector *ngFor="let sector of sectors | sectorPipe: 8" [sector]="sector" [selectedGame]="selectedGame" class="col-md-3 col-lg-3"></sector>
+</div>
+<div class="row">
+  <sector *ngFor="let sector of sectors | sectorPipe: 9" [sector]="sector" [selectedGame]="selectedGame" class="col-md-3 col-lg-3"></sector>
+  <sector *ngFor="let sector of sectors | sectorPipe: 10" [sector]="sector" [selectedGame]="selectedGame" class="col-md-6 col-lg-6"></sector>
+</div>
