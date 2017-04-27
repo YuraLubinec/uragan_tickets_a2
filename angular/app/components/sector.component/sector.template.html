@@ -1,18 +1,21 @@
-<div>Сектор: {{sector.name}} Ціна: {{sector.price}}</div>
-<table class="col-md-12 col-lg-12">
-  <tr>
-    <td *ngFor="let seat of sector.seats | sortBy:'id' | row:1 ">
-      <button [class.selected]="markOccupied(seat.id)" [attr.disabled]="markOccupied(seat.id) ? 'disabled' : null">{{seat.place}}</button>
-    </td>
-  </tr>
-  <tr>
-    <td *ngFor="let seat of sector.seats | sortBy:'id' | row:2 ">
-      <button [class.selected]="markOccupied(seat.id)" [attr.disabled]="markOccupied(seat.id) ? 'disabled' : null">{{seat.place}}</button>
-    </td>
-  </tr>
-  <tr>
-    <td *ngFor="let seat of sector.seats | sortBy:'id' | row:3 ">
-      <button [class.selected]="markOccupied(seat.id)" [attr.disabled]="markOccupied(seat.id) ? 'disabled' : null">{{seat.place}}</button>
-    </td>
-  </tr>
-</table>
+<div class="bordered">
+  <div>Сектор: {{sector.name}}</div>
+  <table class="col-md-12 col-lg-12">
+    <tr>
+      <td *ngFor="let seat of sector.seats | sortBy:'id' | row:1 ">
+        <button [class.selected]="markOccupied(seat.id)" [attr.disabled]="markOccupied(seat.id) ? 'disabled' : null">{{seat.place}}</button>
+      </td>
+    </tr>
+    <tr>
+      <td *ngFor="let seat of sector.seats | sortBy:'id' | row:2 ">
+        <button [class.selected]="markOccupied(seat.id)" [attr.disabled]="markOccupied(seat.id) ? 'disabled' : null">{{seat.place}}</button>
+      </td>
+    </tr>
+    <tr>
+      <td *ngFor="let seat of sector.seats | sortBy:'id' | row:3 ">
+        <button [class.selected]="markOccupied(seat.id)" [attr.disabled]="markOccupied(seat.id) ? 'disabled' : null">{{seat.place}}</button>
+      </td>
+    </tr>
+  </table>
+  <div>Ціна: {{sector.price}} грн</div>
+</div>
