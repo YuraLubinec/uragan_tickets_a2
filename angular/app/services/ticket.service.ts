@@ -12,11 +12,11 @@ export class TicketService {
   }
 
   saveTicket(ticket: Ticket) {
-    this.http.post(this.baseUrl, ticket).toPromise().catch(this.handleError);
+    return this.http.post(this.baseUrl, ticket).toPromise().catch(this.handleError);
   }
 
   deleteTicket(ticket_id : Number){
-    this.http.delete(this.baseUrl+"/"+ticket_id).toPromise().catch(this.handleError);
+    return this.http.delete(this.baseUrl+"/"+ticket_id).toPromise().catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {

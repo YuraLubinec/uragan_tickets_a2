@@ -20,7 +20,7 @@ export class MainPageComponent implements OnInit {
     private selectedSeat: Seat;
     private selectedSeatSectorName: String;
     private hideModal: boolean;
-    private isOccupied : boolean;
+    private isOccupied: boolean;
 
     constructor(private sectorService: SectorService, private gameService: GameService, private ticketService: TicketService) { }
 
@@ -37,22 +37,27 @@ export class MainPageComponent implements OnInit {
         this.gameService.getGames().then(games => this.games = games);
     }
 
+    update(game_id: number): void {
+        this.gameService.getGames().then(games => { this.games = games; this.selectedGame = games.find(game => game.id === game_id) });
+    }
+
+
     getSelectedSeat(seat: Seat, name: String) {
         this.selectedSeat = seat;
         this.selectedSeatSectorName = name;
     }
 
-    markAsOccupied(isOccupied : boolean){
+    markAsOccupied(isOccupied: boolean) {
         this.isOccupied = isOccupied;
 
     }
 
     saveTicket(game_id: number, seat_id: number) {
-        this.ticketService.saveTicket(new Ticket(game_id, seat_id));
+        this.ticketService.saveTicket(new Ticket(game_id, seat_id)).then(response => this.update(this.selectedGame.id));
     }
 
-    deleteTicket(seat_id: Number) {
-        this.ticketService.deleteTicket(this.selectedGame.tickets.find(ticket => ticket.seat_id === seat_id).id);
+    deleteTicket(seat_id: number) {
+        this.ticketService.deleteTicket(this.selectedGame.tickets.find(ticket => ticket.seat_id === seat_id).id).then(response => this.update(this.selectedGame.id));
     }
 
 }

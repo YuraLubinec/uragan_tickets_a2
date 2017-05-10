@@ -34,15 +34,15 @@
       (isOccupied)="markAsOccupied($event)" class="col-md-3 col-lg-3 col-md-offset-2 col-lg-offset-2"></sector>
   </div>
 
-  <div class="modal modal fade" id="myModal" role="dialog" *ngIf="selectedSeat">
-    <div class="modal-dialog">
+  <div class="modal fade" id="myModal" role="dialog" *ngIf="selectedSeat">
+    <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Сектор: {{selectedSeatSectorName}} Ряд: {{selectedSeat.row}} Місце: {{selectedSeat.place}}</h4>
+          <h4 class="modal-title col-md-12 col-lg-12">Сектор: {{selectedSeatSectorName}} Ряд: {{selectedSeat.row}} Місце: {{selectedSeat.place}}</h4>
         </div>
-        <div class="modal-body">
-          <button class="btn btn-success" (click)="saveTicket(selectedGame.id, selectedSeat.id)" data-dismiss="modal" *ngIf="!isOccupied">Зберегти та роздрукувати білет</button>
-          <button class="btn btn-danger" (click)="deleteTicket(selectedSeat.id)" data-dismiss="modal" *ngIf="isOccupied">Видалити квиток</button>
+        <div class="modal-footer">
+          <button class="btn btn-success col-md-12 col-lg-12" (click)="saveTicket(selectedGame.id, selectedSeat.id)" data-dismiss="modal" *ngIf="!isOccupied">Зберегти та роздрукувати білет</button>
+          <button class="btn btn-danger col-md-12 col-lg-12" (click)="deleteTicket(selectedSeat.id)" data-dismiss="modal" *ngIf="isOccupied">Видалити квиток</button>
         </div>
       </div>
     </div>
