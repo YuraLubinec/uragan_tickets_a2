@@ -12,7 +12,7 @@ td button {
 .bordered {
 	border: solid 1px black;
 	border-radius: 3px;
-	padding: 15px;
+	padding: 10px;
 	margin: 5px 0px;
 	color: #ffffff;
 	background-color: rgba(0, 0, 0, 0.4);
