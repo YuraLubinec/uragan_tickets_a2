@@ -6,5 +6,6 @@ export class Game{
     secondTeam: string;
     date: string;
     time: string;
+    season_id: number
     tickets: Array<Ticket>;
 }

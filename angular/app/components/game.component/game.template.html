@@ -1,1 +1,33 @@
-<h1>GAME</h1>
+
+<div class="bordered col-md-12 col-lg-12 text-center">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="table-responsive">
+				<table class="table" id="games">
+					<thead>
+						<tr>
+							<th class="col-md-2 table-th-td">ГОСПОДАРІ</th>
+							<th class="col-md-2 table-th-td">ГОСТІ</th>
+							<th class="col-md-1 table-th-td">ДАТА</th>
+							<th class="col-md-1 table-th-td">ЧАС</th>
+							<th class="col-md-2 table-th-td">СЕЗОН</th>
+							<th class="col-md-4 table-th-td" width="20%"></th>
+						</tr>
+					</thead>
+					<tbody>
+                        <tr *ngFor="let game of games">
+                            <template [ngIf]="game.season_id == 3">
+                                <td class="table-th-td"><span>{{game.firstTeam}}</span></td>
+                                <td class="table-th-td"><span>{{game.secondTeam}}</span></td>
+                                <td class="table-th-td"><span> {{game.date}}</span></td>
+                                <td class="table-th-td"><span> {{game.time}}</span></td>
+                                <td class="table-th-td"><span> {{game.season_id}}</span></td>
+                            </template>
+                            
+                        </tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
