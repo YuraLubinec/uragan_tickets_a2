@@ -12,13 +12,11 @@ import { Row } from './components/sector.component/row.pipe';
 import { SectorPipe } from './components/main-page.component/sectorPipe.pipe';
 import {HeaderComponent} from './components/header.component/header.component';
 import {GameComponent} from './components/game.component/game.component';
+import  {AppRoutes} from './app.routing';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpModule, 
-  RouterModule.forRoot([
-    {path: 'tickets', component: MainPageComponent, pathMatch: 'full'},
-    { path :'games', component : GameComponent }
-  ])
+  RouterModule.forRoot(AppRoutes)
 ],
   declarations: [AppComponent, MainPageComponent, SectorComponent, SortBy, Row, SectorPipe, HeaderComponent,GameComponent],
   providers: [],

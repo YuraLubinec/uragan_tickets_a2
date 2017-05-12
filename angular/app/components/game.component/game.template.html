@@ -16,14 +16,18 @@
 					</thead>
 					<tbody>
                         <tr *ngFor="let game of games">
-                            <template [ngIf]="game.season_id == 3">
+							    <td class="table-th-td"><span>{{game.firstTeam}}</span></td>
+                                <td class="table-th-td"><span>{{game.secondTeam}}</span></td>
+                                <td class="table-th-td"><span> {{game.date}}</span></td>
+                                <td class="table-th-td"><span> {{game.time}}</span></td>
+                                <td class="table-th-td"><span> {{game.season_id}}</span></td>
+                           <!-- <template [ngIf]="game.season_id == 3">
                                 <td class="table-th-td"><span>{{game.firstTeam}}</span></td>
                                 <td class="table-th-td"><span>{{game.secondTeam}}</span></td>
                                 <td class="table-th-td"><span> {{game.date}}</span></td>
                                 <td class="table-th-td"><span> {{game.time}}</span></td>
                                 <td class="table-th-td"><span> {{game.season_id}}</span></td>
-                            </template>
-                            
+                            </template> -->  
                         </tr>
 					</tbody>
 				</table>
