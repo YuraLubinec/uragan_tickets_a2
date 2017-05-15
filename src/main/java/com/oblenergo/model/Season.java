@@ -23,7 +23,7 @@ public class Season {
   private int id;
   private String years;
   private Set<Game> games = new HashSet<>();
-  private Set<Subscription> subscription = new HashSet<>();
+  private Set<Subscription> subscriptions = new HashSet<>();
 
   @Id
   @Column(name = "id")
@@ -57,12 +57,12 @@ public class Season {
 
   @OneToMany
   @JoinColumn(name = "season_id")
-  public Set<Subscription> getSubscription() {
-    return subscription;
+  public Set<Subscription> getSubscriptions() {
+    return subscriptions;
   }
 
-  public void setSubscription(Set<Subscription> subscription) {
-    this.subscription = subscription;
+  public void setSubscriptions(Set<Subscription> subscription) {
+    this.subscriptions = subscription;
   }
 
   @Override

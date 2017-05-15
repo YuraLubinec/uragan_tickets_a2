@@ -2,11 +2,16 @@
 	background-color: red;
 }
 
+.subscribed {
+	background-color: green;
+}
+
 td button {
 	width: 100%;
 	padding : 0px;
 	font-size: 9px;
 	color: #000000;
+	border: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 .bordered {

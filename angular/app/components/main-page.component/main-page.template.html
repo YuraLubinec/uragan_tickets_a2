@@ -1,36 +1,36 @@
 <div class="row">
   <div class="col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
-    <select [(ngModel)]="selectedGame" class="form-control">
+    <select [(ngModel)]="selectedGame" (ngModelChange)="getSeason($event.season_id)" class="form-control">
       <option disabled>Оберіть гру</option>
       <option *ngFor="let game of games" [ngValue]="game">Гра {{game.date}}: {{game.firstTeam}} vs {{game.secondTeam}}</option>
     </select>
   </div>
 </div>
-<div *ngIf="selectedGame">
+<div *ngIf="subscribtions">
   <div class="row">
-    <sector *ngFor="let sector of sectors | sectorPipe: 1" [sector]="sector" [selectedGame]="selectedGame" (selectedSeat)="getSelectedSeat($event, sector.name)"
+    <sector *ngFor="let sector of sectors | sectorPipe: 1" [sector]="sector" [selectedGame]="selectedGame" [subscribtions]="subscribtions" (selectedSeat)="getSelectedSeat($event, sector.name)"
       (isOccupied)="markAsOccupied($event)" class="col-md-2 col-lg-2 col-md-offset-1 col-lg-offset-1"></sector>
-    <sector *ngFor="let sector of sectors | sectorPipe: 2" [sector]="sector" [selectedGame]="selectedGame" (selectedSeat)="getSelectedSeat($event, sector.name)"
+    <sector *ngFor="let sector of sectors | sectorPipe: 2" [sector]="sector" [selectedGame]="selectedGame" [subscribtions]="subscribtions" (selectedSeat)="getSelectedSeat($event, sector.name)"
       (isOccupied)="markAsOccupied($event)" class="col-md-2 col-lg-2 "></sector>
-    <sector *ngFor="let sector of sectors | sectorPipe: 3" [sector]="sector" [selectedGame]="selectedGame" (selectedSeat)="getSelectedSeat($event, sector.name)"
+    <sector *ngFor="let sector of sectors | sectorPipe: 3" [sector]="sector" [selectedGame]="selectedGame" [subscribtions]="subscribtions" (selectedSeat)="getSelectedSeat($event, sector.name)"
       (isOccupied)="markAsOccupied($event)" class="col-md-2 col-lg-2"></sector>
-    <sector *ngFor="let sector of sectors | sectorPipe: 4" [sector]="sector" [selectedGame]="selectedGame" (selectedSeat)="getSelectedSeat($event, sector.name)"
+    <sector *ngFor="let sector of sectors | sectorPipe: 4" [sector]="sector" [selectedGame]="selectedGame" [subscribtions]="subscribtions" (selectedSeat)="getSelectedSeat($event, sector.name)"
       (isOccupied)="markAsOccupied($event)" class="col-md-2 col-lg-2"></sector>
-    <sector *ngFor="let sector of sectors | sectorPipe: 5" [sector]="sector" [selectedGame]="selectedGame" (selectedSeat)="getSelectedSeat($event, sector.name)"
+    <sector *ngFor="let sector of sectors | sectorPipe: 5" [sector]="sector" [selectedGame]="selectedGame" [subscribtions]="subscribtions" (selectedSeat)="getSelectedSeat($event, sector.name)"
       (isOccupied)="markAsOccupied($event)" class="col-md-2 col-lg-2"></sector>
   </div>
   <div class="row">
-    <sector *ngFor="let sector of sectors | sectorPipe: 6" [sector]="sector" [selectedGame]="selectedGame" (selectedSeat)="getSelectedSeat($event, sector.name)"
+    <sector *ngFor="let sector of sectors | sectorPipe: 6" [sector]="sector" [selectedGame]="selectedGame" [subscribtions]="subscribtions" (selectedSeat)="getSelectedSeat($event, sector.name)"
       (isOccupied)="markAsOccupied($event)" class="col-md-3 col-lg-3"></sector>
-    <sector *ngFor="let sector of sectors | sectorPipe: 7" [sector]="sector" [selectedGame]="selectedGame" (selectedSeat)="getSelectedSeat($event, sector.name)"
+    <sector *ngFor="let sector of sectors | sectorPipe: 7" [sector]="sector" [selectedGame]="selectedGame" [subscribtions]="subscribtions" (selectedSeat)="getSelectedSeat($event, sector.name)"
       (isOccupied)="markAsOccupied($event)" class="col-md-6 col-lg-6"></sector>
-    <sector *ngFor="let sector of sectors | sectorPipe: 8" [sector]="sector" [selectedGame]="selectedGame" (selectedSeat)="getSelectedSeat($event, sector.name)"
+    <sector *ngFor="let sector of sectors | sectorPipe: 8" [sector]="sector" [selectedGame]="selectedGame" [subscribtions]="subscribtions" (selectedSeat)="getSelectedSeat($event, sector.name)"
       (isOccupied)="markAsOccupied($event)" class="col-md-3 col-lg-3"></sector>
   </div>
   <div class="row">
-    <sector *ngFor="let sector of sectors | sectorPipe: 9" [sector]="sector" [selectedGame]="selectedGame" (selectedSeat)="getSelectedSeat($event, sector.name)"
+    <sector *ngFor="let sector of sectors | sectorPipe: 9" [sector]="sector" [selectedGame]="selectedGame" [subscribtions]="subscribtions" (selectedSeat)="getSelectedSeat($event, sector.name)"
       (isOccupied)="markAsOccupied($event)" class="col-md-3 col-lg-3 col-md-offset-2 col-lg-offset-2"></sector>
-    <sector *ngFor="let sector of sectors | sectorPipe: 10" [sector]="sector" [selectedGame]="selectedGame" (selectedSeat)="getSelectedSeat($event, sector.name)"
+    <sector *ngFor="let sector of sectors | sectorPipe: 10" [sector]="sector" [selectedGame]="selectedGame" [subscribtions]="subscribtions" (selectedSeat)="getSelectedSeat($event, sector.name)"
       (isOccupied)="markAsOccupied($event)" class="col-md-3 col-lg-3 col-md-offset-2 col-lg-offset-2"></sector>
   </div>
 

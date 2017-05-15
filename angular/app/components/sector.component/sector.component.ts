@@ -1,8 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Sector } from '../../models/sector';
 import { Game } from '../../models/game';
-import { Ticket } from '../../models/ticket';
 import { Seat } from '../../models/seat';
+import { Subscription } from '../../models/subscription';
 
 @Component({
   selector: 'sector',
@@ -13,11 +13,21 @@ export class SectorComponent {
 
   @Input() sector: Sector;
   @Input() selectedGame: Game;
+  @Input() subscribtions : Subscription[];
   @Output() selectedSeat: EventEmitter<Seat> = new EventEmitter<Seat>();
   @Output() isOccupied: EventEmitter<Boolean> = new EventEmitter<Boolean>();
 
   markOccupied(id: number): boolean {
-    return (this.selectedGame && this.selectedGame.tickets.find(ticket => ticket.seat_id === id)) ? true : false;
+    return this.selectedGame.tickets.find(ticket => ticket.seat_id === id) ? true : false;
+  }
+
+  markSubscribed(id: number): boolean {
+    return this.subscribtions.find(subscription => subscription.seat_id === id) ? true : false;
+  }
+
+  setTip(id: number): string {
+    let subscr : Subscription = this.subscribtions.find(subscription => subscription.seat_id === id);
+    return subscr ? "Сезонний абонемент на ім'я: "+subscr.fullName : null;
   }
 
   selectSeat(seat: Seat, occupied: boolean) {

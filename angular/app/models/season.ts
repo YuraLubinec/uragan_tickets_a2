@@ -5,5 +5,5 @@ export class Season{
     id: number;
     years: string;
     games: Array<Game>;
-    subscription:Array<Subscription>
+    subscriptions:Array<Subscription>
 }

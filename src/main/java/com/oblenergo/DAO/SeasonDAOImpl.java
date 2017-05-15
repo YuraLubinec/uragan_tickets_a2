@@ -22,7 +22,7 @@ public class SeasonDAOImpl extends AbstractDAO<Integer, Season> implements Seaso
       for (Game games : season.getGames()) {
         Hibernate.initialize(games.getTickets());
       }
-      Hibernate.initialize(season.getSubscription());
+      Hibernate.initialize(season.getSubscriptions());
     }
     return getById(id);
   }
@@ -39,7 +39,7 @@ public class SeasonDAOImpl extends AbstractDAO<Integer, Season> implements Seaso
       for (Game games : season.getGames()) {
         Hibernate.initialize(games.getTickets());
       }
-      Hibernate.initialize(season.getSubscription());
+      Hibernate.initialize(season.getSubscriptions());
     }
     return seasons;
   }

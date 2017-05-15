@@ -3,17 +3,20 @@
   <table class="col-md-12 col-lg-12">
     <tr>
       <td *ngFor="let seat of sector.seats | sortBy:'id' | row:1 ">
-        <button [class.selected]="markOccupied(seat.id)" (click)="selectSeat(seat, $event.target.classList.contains('selected'))" data-toggle="modal" data-target="#myModal">{{seat.place}}</button>
+        <button [class.selected]="markOccupied(seat.id)" [class.subscribed]="markSubscribed(seat.id)" [attr.disabled]="markSubscribed(seat.id)||null" [attr.title]="setTip(seat.id)"
+          (click)="selectSeat(seat, $event.target.classList.contains('selected'))" data-toggle="modal" data-target="#myModal">{{seat.place}}</button>
       </td>
     </tr>
     <tr>
-      <td *ngFor="let seat of sector.seats | sortBy:'id' | row:2 ">
-        <button [class.selected]="markOccupied(seat.id)" (click)="selectSeat(seat, $event.target.classList.contains('selected'))" data-toggle="modal" data-target="#myModal">{{seat.place}}</button>
+      <td *ngFor="let seat of sector.seats | sortBy: 'id' | row:2 ">
+        <button [class.selected]="markOccupied(seat.id)" [class.subscribed]="markSubscribed(seat.id)" [attr.disabled]="markSubscribed(seat.id)||null" [attr.title]="setTip(seat.id)"
+          (click)="selectSeat(seat, $event.target.classList.contains('selected'))" data-toggle="modal" data-target="#myModal">{{seat.place}}</button>
       </td>
     </tr>
     <tr>
-      <td *ngFor="let seat of sector.seats | sortBy:'id' | row:3 ">
-        <button [class.selected]="markOccupied(seat.id)" (click)="selectSeat(seat, $event.target.classList.contains('selected'))" data-toggle="modal" data-target="#myModal">{{seat.place}}</button>
+      <td *ngFor="let seat of sector.seats | sortBy: 'id' | row:3 ">
+        <button [class.selected]="markOccupied(seat.id)" [class.subscribed]="markSubscribed(seat.id)" [attr.disabled]="markSubscribed(seat.id)||null" [attr.title]="setTip(seat.id)"
+          (click)="selectSeat(seat, $event.target.classList.contains('selected'))" data-toggle="modal" data-target="#myModal">{{seat.place}}</button>
       </td>
     </tr>
   </table>
